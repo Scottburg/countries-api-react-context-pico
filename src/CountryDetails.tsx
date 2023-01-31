@@ -10,7 +10,6 @@ function CountryDetails(country: any) {
 
   const theme = useContext(ThemeContext);
   const { data }: any = useContext(MyContext);
-  console.log('🚀 ~ file: CountryDetails.tsx:12 ~ CountryDetails ~ data', data);
   const countryDetails: any = data.find(
     (country: any) => country.cca3 === params.countryid
   );
@@ -29,18 +28,39 @@ function CountryDetails(country: any) {
         {/* {{ ...data }} */}
         {theme}
       </div>
-      <img src={country.flag} alt="flag" />
+      <img src={countryDetails.flags.png} alt="flag" />
       <div className="country-card__details">
         <h2>{countryDetails.name.common}</h2>
+        <span>Native Name: {countryDetails.name.common.nativeName}</span>
+        <span>Sub Region: {countryDetails.name.common.nativeName}</span>
         <p>
-          <strong>Population:</strong> {country.population}
+          <strong>Native Name:</strong> {countryDetails.population}
         </p>
         <p>
-          <strong>Region:</strong> {country.region}
+          <strong>Population:</strong>{' '}
+          {countryDetails.population.toLocaleString()}
         </p>
         <p>
-          <strong>Capital:</strong> {country.capital}
+          <strong>Capital:</strong> {countryDetails.capital[0]}
         </p>
+        <p>
+          <strong>Region:</strong> {countryDetails.region}
+        </p>
+        <p>
+          <strong>Sub Region:</strong> {countryDetails.subregion}
+        </p>
+        {/* <p>
+          <strong>Top Level Domain:</strong> {countryDetails.tld[0]}
+        </p>
+        <p>
+          <strong>Currencies:</strong> {countryDetails.capital}
+        </p>
+        <p>
+          <strong>Capital:</strong> {countryDetails.capital}
+        </p>
+        <p>
+          <strong>Languages:</strong> {countryDetails.capital}
+        </p> */}
         <section>
           Borders:
           <div>

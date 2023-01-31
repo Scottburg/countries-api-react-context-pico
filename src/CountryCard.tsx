@@ -12,7 +12,8 @@ function CountryCard(country: any) {
             <div className="country-card__details">
               <h2>{countryDetails?.name?.common}</h2>
               <p>
-                <strong>Population:</strong> {countryDetails.population}
+                <strong>Population:</strong>{' '}
+                {countryDetails.population.toLocaleString()}
               </p>
               <p>
                 <strong>Region:</strong> {countryDetails.region}

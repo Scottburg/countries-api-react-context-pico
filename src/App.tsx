@@ -83,8 +83,8 @@ function App() {
             ? searchSelection.map((country: object) => (
                 <CountryCard country={{ ...country }} />
               ))
-            : data.map((country: object) => (
-                <CountryCard country={{ ...country }} />
+            : data.map((country: object, index: number) => (
+                <CountryCard country={{ ...country }} key={index} />
               ))}
         </section>
       ) : (
@@ -95,5 +95,3 @@ function App() {
 }
 
 export default App;
-
-//Add logic for a search that returns nothing
