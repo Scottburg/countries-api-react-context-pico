@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
-import CountryCard from './CountryCard';
-import './App.css';
+import { useState, useContext } from 'react';
+import CountryCard from './assets/Components/CountryCard/CountryCard';
+import './App.scss';
 import { MyContext } from './CountriesDataProvider';
 
 // import React from 'react';
@@ -63,22 +63,27 @@ function App() {
 
   return (
     <>
-      <header>HEADER WITH DARK MODE SELECTOR</header>{' '}
-      <input
-        value={inputValue.searchValue}
-        onChange={handleSearchinput}
-      ></input>
-      <select value={inputValue.region} onChange={handleRegionChange}>
-        {regions.map((region) => (
-          <option key={region} value={region}>
-            {region}
-          </option>
-        ))}
-      </select>
+      <div className="search-input-bar">
+        <div>
+          <input
+            value={inputValue.searchValue}
+            onChange={handleSearchinput}
+          ></input>
+        </div>
+        <div>
+          <select value={inputValue.region} onChange={handleRegionChange}>
+            {regions.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
       {!searchSelection.length && inputValue.searchValue ? (
         <div>No Countries Found</div>
       ) : data ? (
-        <section>
+        <section className="cards-container">
           {searchSelection.length
             ? searchSelection.map((country: object) => (
                 <CountryCard country={{ ...country }} />
