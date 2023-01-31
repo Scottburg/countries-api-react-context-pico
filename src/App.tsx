@@ -8,22 +8,9 @@ import { MyContext } from './CountriesDataProvider';
 // const ThemeContext = React.createContext("light");
 
 function App() {
-  const [countries, setCountries] = useState([]);
-
-  // useEffect(() => {
-  //   console.log('useEffect called');
-  //   apiCall();
-  // }, []);
-
-  const apiCall = async () => {
-    console.log('apiCall called');
-    const response = await fetch('https://restcountries.com/v3.1/all');
-    const data = await response.json();
-    console.log(data);
-    setCountries(data);
-  };
-
   const { data } = useContext(MyContext);
+
+  let [inputValue, setInputValue] = useState({ searchValue: '', region: '' });
 
   const regions = [
     'All',
@@ -35,10 +22,31 @@ function App() {
     'Antarctic',
   ];
 
+  function filterCountries() {
+    let { searchValue, region } = inputValue;
+
+    if (region && region !== 'All') {
+      let filteredSelection = data
+        ? data.filter((country: any) => {
+            return country.region.toLowerCase() === region.toLowerCase();
+          })
+        : [];
+      if (searchValue !== '') {
+        filteredSelection = filteredSelection.filter((country: any) =>
+          country.name.common.toLowerCase().includes(searchValue)
+        );
+      }
+      selectedCountries = filteredSelection;
+    } else {
+      selectedCountries = data.filter((country: any) =>
+        country.name.common.toLowerCase().includes(searchValue)
+      );
+    }
+  }
+
   return (
     <>
       <header>HEADER WITH DARK MODE SELECTOR</header>{' '}
-      {/* <section>API results. {data}</section>{' '} */}
       {data ? (
         <section>
           {' '}
