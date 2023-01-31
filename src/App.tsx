@@ -10,7 +10,11 @@ import { MyContext } from './CountriesDataProvider';
 function App() {
   const { data } = useContext(MyContext);
 
-  let [inputValue, setInputValue] = useState({ searchValue: '', region: '' });
+  let [inputValue, setInputValue] = useState({
+    searchValue: '',
+    region: '',
+    selection: [],
+  });
 
   const regions = [
     'All',
@@ -24,24 +28,27 @@ function App() {
 
   function filterCountries() {
     let { searchValue, region } = inputValue;
+    let selectedCountries: [] = [];
 
     if (region && region !== 'All') {
-      let filteredSelection = data
+      let selectedCountries = data
         ? data.filter((country: any) => {
             return country.region.toLowerCase() === region.toLowerCase();
           })
         : [];
       if (searchValue !== '') {
-        filteredSelection = filteredSelection.filter((country: any) =>
+        selectedCountries = selectedCountries.filter((country: any) =>
           country.name.common.toLowerCase().includes(searchValue)
         );
       }
-      selectedCountries = filteredSelection;
     } else {
-      selectedCountries = data.filter((country: any) =>
-        country.name.common.toLowerCase().includes(searchValue)
-      );
+      selectedCountries = data
+        ? data.filter((country: any) =>
+            country.name.common.toLowerCase().includes(searchValue)
+          )
+        : [];
     }
+    setInputValue({ ...inputValue, selection: selectedCountries });
   }
 
   return (
