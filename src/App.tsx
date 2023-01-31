@@ -71,7 +71,11 @@ function App() {
           ></input>
         </div>
         <div>
-          <select value={inputValue.region} onChange={handleRegionChange}>
+          <select
+            value={inputValue.region}
+            onChange={handleRegionChange}
+            placeholder="Search for a Country"
+          >
             {regions.map((region) => (
               <option key={region} value={region}>
                 {region}
