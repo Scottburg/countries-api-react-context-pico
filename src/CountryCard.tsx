@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom';
 
 function CountryCard(country: any) {
-  console.log(
-    '🚀 ~ file: CountryCard.tsx:2 ~ CountryCard ~ country',
-    country.country
-  );
   const countryDetails = country.country;
 
   return (

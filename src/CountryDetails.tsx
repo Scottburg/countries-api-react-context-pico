@@ -43,13 +43,17 @@ function CountryDetails(country: any) {
         </p>
         <section>
           Borders:
-          <ul>
-            {countryDetails.borders.map((border: string) => (
-              <Link to={`/country/${border}`}>
-                <div> {getCountryNameFromCCA3(border)}</div>
-              </Link>
-            ))}
-          </ul>
+          <div>
+            {countryDetails.borders ? (
+              countryDetails.borders.map((border: string) => (
+                <Link to={`/country/${border}`}>
+                  <div> {getCountryNameFromCCA3(border)}</div>
+                </Link>
+              ))
+            ) : (
+              <div>No Land borders</div>
+            )}
+          </div>
         </section>
       </div>
     </div>

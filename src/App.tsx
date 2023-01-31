@@ -16,6 +16,10 @@ function App() {
     selection: [],
   });
 
+  // useEffect(() => {
+  //   filterCountries();
+  // }, [inputValue.searchValue, inputValue.region]);
+
   const regions = [
     'All',
     'Africa',
@@ -25,8 +29,15 @@ function App() {
     'Oceania',
     'Antarctic',
   ];
+  function handleRegionChange(e: any) {
+    setInputValue({ ...inputValue, region: e.target.value });
+  }
 
   function filterCountries() {
+    console.log(
+      '🚀 ~ file: App.tsx:2 ~ filterCountries ~ inputValue',
+      inputValue
+    );
     let { searchValue, region } = inputValue;
     let selectedCountries: [] = [];
 
@@ -48,18 +59,30 @@ function App() {
           )
         : [];
     }
+    console.log(data, selectedCountries);
     setInputValue({ ...inputValue, selection: selectedCountries });
   }
 
   return (
     <>
       <header>HEADER WITH DARK MODE SELECTOR</header>{' '}
+      <select value={inputValue.region} onChange={handleRegionChange}>
+        {regions.map((region) => (
+          <option key={region} value={region}>
+            {region}
+          </option>
+        ))}
+      </select>
       {data ? (
         <section>
           {' '}
-          {data.map((country: object) => (
-            <CountryCard country={{ ...country }} />
-          ))}
+          {inputValue.selection.length
+            ? inputValue.selection.map((country: object) => (
+                <CountryCard country={{ ...country }} />
+              ))
+            : data.map((country: object) => (
+                <CountryCard country={{ ...country }} />
+              ))}
         </section>
       ) : (
         <div> Loading...</div>
@@ -69,3 +92,5 @@ function App() {
 }
 
 export default App;
+
+//Add logic for a search that returns nothing
