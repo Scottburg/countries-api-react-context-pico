@@ -10,15 +10,12 @@ import { MyContext } from './CountriesDataProvider';
 function App() {
   const { data } = useContext(MyContext);
 
-  let [inputValue, setInputValue] = useState({
+  const [inputValue, setInputValue] = useState({
     searchValue: '',
     region: '',
     selection: [],
   });
-
-  // useEffect(() => {
-  //   filterCountries();
-  // }, [inputValue.searchValue, inputValue.region]);
+  const [searchSelection, setSearchSelection] = useState([]);
 
   const regions = [
     'All',
@@ -31,18 +28,19 @@ function App() {
   ];
   function handleRegionChange(e: any) {
     setInputValue({ ...inputValue, region: e.target.value });
+    filterCountries(e.target.value, inputValue.searchValue);
   }
 
-  function filterCountries() {
-    console.log(
-      '🚀 ~ file: App.tsx:2 ~ filterCountries ~ inputValue',
-      inputValue
-    );
-    let { searchValue, region } = inputValue;
-    let selectedCountries: [] = [];
+  function handleSearchinput(e: any) {
+    setInputValue({ ...inputValue, searchValue: e.target.value });
+    filterCountries(inputValue.region, e.target.value);
+  }
+
+  function filterCountries(region: string, searchValue: string = '') {
+    let selectedCountries: any = [];
 
     if (region && region !== 'All') {
-      let selectedCountries = data
+      selectedCountries = data
         ? data.filter((country: any) => {
             return country.region.toLowerCase() === region.toLowerCase();
           })
@@ -59,13 +57,17 @@ function App() {
           )
         : [];
     }
-    console.log(data, selectedCountries);
-    setInputValue({ ...inputValue, selection: selectedCountries });
+    console.log(selectedCountries);
+    setSearchSelection(selectedCountries);
   }
 
   return (
     <>
       <header>HEADER WITH DARK MODE SELECTOR</header>{' '}
+      <input
+        value={inputValue.searchValue}
+        onChange={handleSearchinput}
+      ></input>
       <select value={inputValue.region} onChange={handleRegionChange}>
         {regions.map((region) => (
           <option key={region} value={region}>
@@ -73,11 +75,12 @@ function App() {
           </option>
         ))}
       </select>
-      {data ? (
+      {!searchSelection.length && inputValue.searchValue ? (
+        <div>No Countries Found</div>
+      ) : data ? (
         <section>
-          {' '}
-          {inputValue.selection.length
-            ? inputValue.selection.map((country: object) => (
+          {searchSelection.length
+            ? searchSelection.map((country: object) => (
                 <CountryCard country={{ ...country }} />
               ))
             : data.map((country: object) => (
