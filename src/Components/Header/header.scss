@@ -1,17 +1,32 @@
+@import '../../Styles/__styles';
 .country-header-with-toggle {
+  color: $color-light-text;
   display: flex;
   flex-flow: row, nowrap;
   justify-content: space-between;
+  padding: 0.3rem 5.1rem;
   align-items: center;
   border-bottom: 0.5px grey;
   width: 100%;
-  // box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  box-shadow: 0 0 15px hsl(0, 0%, 52%);
   margin-bottom: 2rem;
   height: 5rem;
-
+  background-color: $color-light-elements;
   button {
     border: none;
     background-color: transparent;
     margin-right: 20px;
+  }
+}
+
+.dark {
+  .country-header-with-toggle {
+    background-color: $color-dark-elements;
+    color: $color-dark-text;
+    box-shadow: 0 0 15px hsl(0, 0%, 5%);
+  }
+  .white-icon {
+    color: $color-dark-text;
+    size: 1.25rem;
   }
 }

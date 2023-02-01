@@ -1,11 +1,19 @@
 @import './Styles/__styles.scss';
 
 #root {
-  // max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-  // background-color: $color-light-background;
+}
+
+.body {
+  background-color: $color-light-background;
+}
+
+/* DARKMODE */
+
+.dark {
+  background-color: $color-dark-background;
+  color: $color-dark-text;
 }
 
 .cards-container {

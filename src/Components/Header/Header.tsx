@@ -16,14 +16,14 @@ const Header = () => {
     <header className="country-header-with-toggle">
       <h2>Where in the world?</h2>
       <button onClick={handleDarkMode}>
-        {darkMode ? (
+        {!darkMode ? (
           <>
             <FontAwesomeIcon icon={faMoon} /> Dark Mode
           </>
         ) : (
-          <>
+          <div className="white-icon">
             <FontAwesomeIcon icon={faSun} /> Light Mode
-          </>
+          </div>
         )}
       </button>
     </header>
