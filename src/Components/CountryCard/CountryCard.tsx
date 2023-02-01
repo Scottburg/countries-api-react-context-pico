@@ -20,7 +20,10 @@ function CountryCard(country: any) {
                 <strong>Region:</strong> {countryDetails.region}
               </p>
               <p>
-                <strong>Capital:</strong> {countryDetails.capital}
+                <strong>Capital:</strong>{' '}
+                {Array.isArray(countryDetails.capital)
+                  ? countryDetails.capital[0]
+                  : countryDetails.capital}
               </p>
             </div>
           </article>
