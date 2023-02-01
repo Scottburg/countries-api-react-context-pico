@@ -2,6 +2,8 @@ import { useState, useContext } from 'react';
 import CountryCard from './assets/Components/CountryCard/CountryCard';
 import './App.scss';
 import { MyContext } from './CountriesDataProvider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 // import React from 'react';
 
@@ -64,12 +66,17 @@ function App() {
   return (
     <>
       <div className="search-input-bar">
-        <div>
+        <div className="text-search-field">
+          <label>
+            <FontAwesomeIcon icon={faSearch} />
+          </label>
           <input
             value={inputValue.searchValue}
             onChange={handleSearchinput}
+            placeholder="Search for a country..."
           ></input>
         </div>
+
         <div>
           <select
             value={inputValue.region}
