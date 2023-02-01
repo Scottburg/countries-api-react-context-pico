@@ -9,9 +9,11 @@ function CountryCard(country: any) {
       {country && (
         <Link to={`/country/${countryDetails.cca3}`}>
           <article className="country-card">
-            <img src={`${countryDetails.flags.png}`} alt="flag" />
+            <div className="img-container">
+              <img src={`${countryDetails.flags.png}`} alt="flag" />
+            </div>
             <div className="country-card-details">
-              <h2>{countryDetails?.name?.common}</h2>
+              <h3>{countryDetails?.name?.common}</h3>
               <p>
                 <strong>Population:</strong>{' '}
                 {countryDetails.population.toLocaleString()}

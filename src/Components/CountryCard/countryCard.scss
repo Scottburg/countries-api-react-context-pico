@@ -3,18 +3,33 @@
 .country-card {
   display: flex;
   flex-flow: column nowrap;
-  // justify-content: space-between;
-  max-width: 300px;
+  justify-content: flex-start;
+  max-width: 250px;
   min-width: 250px;
   height: auto;
+  min-height: 300px;
   border-radius: 5px;
   border: 1px grey solid;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.05);
   margin: 1rem;
+  color: $color-light-text;
+  .country-card-details {
+    height: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .img-container {
+    height: 150px;
+    overflow: hidden;
+  }
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: 95%;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
   }
@@ -22,7 +37,7 @@
 
 .dark {
   .country-card {
-    background-color: $color-dark-background;
+    background-color: $color-dark-elements;
     color: $color-dark-text;
   }
 }
