@@ -17,9 +17,9 @@ const Header = () => {
       <h2>Where in the world?</h2>
       <button onClick={handleDarkMode}>
         {!darkMode ? (
-          <>
+          <div className="black-icon">
             <FontAwesomeIcon icon={faMoon} /> Dark Mode
-          </>
+          </div>
         ) : (
           <div className="white-icon">
             <FontAwesomeIcon icon={faSun} /> Light Mode
