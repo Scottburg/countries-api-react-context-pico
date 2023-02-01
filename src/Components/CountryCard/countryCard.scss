@@ -1,3 +1,5 @@
+@import '../../Styles/_styles';
+
 .country-card {
   display: flex;
   flex-flow: column nowrap;
@@ -15,5 +17,12 @@
     height: auto;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
+  }
+}
+
+.dark {
+  .country-card {
+    background-color: $color-dark-elements;
+    color: $color-dark-text;
   }
 }

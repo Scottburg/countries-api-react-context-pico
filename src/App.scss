@@ -1,8 +1,11 @@
+@import './Styles/__styles.scss';
+
 #root {
-  max-width: 1280px;
+  // max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  // background-color: $color-light-background;
 }
 
 .cards-container {
@@ -42,10 +45,20 @@
 
     input {
       border: none;
+      height: fill;
+      width: 100%;
+      font-size: 1rem;
+      outline: none;
+      margin-right: 50px;
     }
 
     label {
       min-width: 40px;
     }
   }
+}
+
+.dark {
+  background-color: $color-dark-background;
+  color: $color-dark-text;
 }

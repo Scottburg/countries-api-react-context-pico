@@ -1,0 +1,17 @@
+.country-header-with-toggle {
+  display: flex;
+  flex-flow: row, nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px grey;
+  width: 100%;
+  // box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  margin-bottom: 2rem;
+  height: 5rem;
+
+  button {
+    border: none;
+    background-color: transparent;
+    margin-right: 20px;
+  }
+}

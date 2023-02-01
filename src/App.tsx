@@ -1,13 +1,9 @@
 import { useState, useContext } from 'react';
-import CountryCard from './assets/Components/CountryCard/CountryCard';
+import CountryCard from './Components/CountryCard/CountryCard';
 import './App.scss';
 import { MyContext } from './CountriesDataProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
-// import React from 'react';
-
-// const ThemeContext = React.createContext("light");
 
 function App() {
   const { data } = useContext(MyContext);
