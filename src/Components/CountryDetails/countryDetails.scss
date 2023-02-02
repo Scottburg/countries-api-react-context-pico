@@ -1,20 +1,40 @@
 @import '../../Styles/__styles';
 
-.country-details {
+.country-details-container {
   display: flex;
+  justify-content: space-evenly;
   margin-top: 3rem;
-  margin-left: img {
-    // max-height: 20rem;
-    // height: 100%;
-    // width: 100%;
-    // max-width: 100%;
-    display: block;
-    // max-width: 100%;
-    max-height: 25rem;
-    width: auto;
-    height: auto;
+  margin-left: 5rem;
+  width: 100%;
+  // img {
+  //   // max-height: 60vh;
+  //   // height: 100%;
+  //   // width: 100%;
+  //   // max-width: 100%;
+  //   // display: block;
+  //   // max-width: 100%;
+  //   // width: auto;
+  //   // height: auto;
+  //   height: 100%;
+  //   max-height: 22rem;
+  //   max-width: 50%;
+  //   // width: 100%;
+  // }
+}
+
+.image-wrapper {
+  height: 800px;
+  position: relative;
+  padding-bottom: 52.63%; /* 1900:1000 */
+
+  img {
+    object-fit: cover;
+    min-height: 14.3125rem;
+    border-radius: 6px;
+    margin: auto;
   }
 }
+
 .home-button {
   margin-left: 5rem;
   padding: 10px 20px;
@@ -52,6 +72,7 @@
   }
 }
 
+// DARK MODE
 .dark {
   .home-button {
     background-color: $color-dark-elements;

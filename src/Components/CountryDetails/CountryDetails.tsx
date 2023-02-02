@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { ThemeContext } from '../../main';
 import { MyContext } from '../../CountriesDataProvider';
 import { Link } from 'react-router-dom';
 import './countryDetails.scss';
@@ -15,24 +14,6 @@ function CountryDetails(country: any) {
   const countryData: any = data.find(
     (country: any) => country.cca3 === params.countryid
   );
-  let nativeName: any = null;
-  console.log(
-    '🚀 ~ file: CountryDetails.tsx:18 ~ CountryDetails ~ countryDetails',
-
-    countryData.capital.toString().replaceAll(',', ', ')
-  );
-  // );
-
-  // if (countryData) {
-  //   nativeName =
-  //     countryData.name.common.nativeName[
-  //       Object.keys(countryData.name.common.nativeName)[0]
-  //     ];
-  //   console.log(
-  //     '🚀 ~ file: CountryDetails.tsx:25 ~ CountryDetails ~ nativeName',
-  //     nativeName
-  //   );
-  // }
 
   const getCountryNameFromCCA3 = (cca3: string) => {
     let res = data.find((country: any) => country.cca3 === cca3);
@@ -49,11 +30,13 @@ function CountryDetails(country: any) {
         </Link>
       </div>
       <div className="country-details">
-        <img src={countryData.flags.png} alt="flag" />
+        <div className="image-wrapper">
+          <img src={countryData.flags.png} alt="flag" />
+        </div>
         <div className="country-text-details">
           <h2>{countryData.name.common}</h2>
           <p>
-            <strong>Population:</strong>{' '}
+            <strong>Native Name:</strong>{' '}
             {
               countryData.name.nativeName[
                 Object.keys(countryData.name.nativeName)[0]
@@ -62,7 +45,8 @@ function CountryDetails(country: any) {
           </p>
 
           <p>
-            <strong>Native :</strong> {countryData.population.toLocaleString()}
+            <strong>Population:</strong>{' '}
+            {countryData.population.toLocaleString()}
           </p>
           <p>
             <strong>Capital:</strong>{' '}
@@ -99,7 +83,7 @@ function CountryDetails(country: any) {
               {countryData.borders ? (
                 countryData.borders.map((border: string) => (
                   <Link to={`/country/${border}`}>
-                    <div className="home-button">
+                    <div className="country-button">
                       {' '}
                       {getCountryNameFromCCA3(border)}
                     </div>
