@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import CountryDetails from './CountryDetails';
+import CountryDetails from './Components/CountryDetails/CountryDetails';
 import './index.scss';
 import { MyContextProvider } from './CountriesDataProvider';
 import Header from './Components/Header/Header';
