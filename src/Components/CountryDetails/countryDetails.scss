@@ -25,7 +25,7 @@
   // width: 60vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 25px 300px 100px;
   grid-template-areas:
     'title .'
     'text1 text2'
@@ -35,17 +35,24 @@
 .border-section {
   grid-area: borders;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 .country-text-details {
   grid-area: text1;
+  text-align: left;
+  margin-left: 2rem;
 }
 .country-text-details-2 {
+  text-align: left;
   grid-area: text2;
 }
 .country-title {
   grid-area: title;
+  h2 {
+    text-align: left;
+    margin-left: 2rem;
+  }
 }
 
 .home-button {
