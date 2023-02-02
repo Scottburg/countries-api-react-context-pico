@@ -17,10 +17,9 @@
     background-color: transparent;
     margin-right: 20px;
   }
-
-  .black-icon {
-    font-size: 1rem;
-  }
+}
+.black-icon {
+  font-size: 1rem;
 }
 
 .dark {
@@ -31,6 +30,27 @@
   }
   .white-icon {
     color: $color-dark-text;
+    font-size: 1rem;
+  }
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  .white-icon {
+    span {
+      font-size: 0.7rem;
+    }
+    color: green;
+  }
+  .black-icon {
+    span {
+      font-size: 0.7rem;
+    }
+  }
+  .country-header-with-toggle {
+    padding: 0.1rem 2rem;
+  }
+  h2 {
     font-size: 1rem;
   }
 }

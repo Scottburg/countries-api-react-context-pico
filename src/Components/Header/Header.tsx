@@ -18,11 +18,11 @@ const Header = () => {
       <button onClick={handleDarkMode}>
         {!darkMode ? (
           <div className="black-icon">
-            <FontAwesomeIcon icon={faMoon} /> Dark Mode
+            <FontAwesomeIcon icon={faMoon} /> <span>Dark Mode </span>
           </div>
         ) : (
           <div className="white-icon">
-            <FontAwesomeIcon icon={faSun} /> Light Mode
+            <FontAwesomeIcon icon={faSun} /> <span>Light Mode </span>
           </div>
         )}
       </button>
