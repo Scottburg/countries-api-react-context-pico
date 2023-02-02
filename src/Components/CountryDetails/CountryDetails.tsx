@@ -34,8 +34,8 @@ function CountryDetails(country: any) {
           <img src={countryData.flags.png} alt="flag" />
         </div>
         <div className="country-details">
-          <div lassName="country-title">
-            <h2 c>{countryData.name.common}</h2>
+          <div className="country-title">
+            <h2>{countryData.name.common}</h2>
           </div>
           <section className="country-text-details">
             <p>

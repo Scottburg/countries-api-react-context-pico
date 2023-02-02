@@ -5,24 +5,22 @@
   justify-content: space-evenly;
   margin-top: 3rem;
   margin-left: 5rem;
-  width: 100%;
 }
 
 .image-wrapper {
   height: 800px;
   position: relative;
-  padding-bottom: 52.63%; /* 1900:1000 */
+  width: 45vw;
+  max-width: 500px;
 
   img {
-    object-fit: cover;
-    min-height: 14.3125rem;
-    border-radius: 6px;
-    margin: auto;
+    min-width: 100%;
+    max-width: 500px;
   }
 }
 
 .country-details {
-  // width: 60vw;
+  width: 60vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 25px 300px 100px;
@@ -30,12 +28,14 @@
     'title .'
     'text1 text2'
     'borders borders';
+  column-gap: 10px;
 }
 
 .border-section {
   grid-area: borders;
   display: flex;
   flex-flow: row wrap;
+  margin-left: 2rem;
 }
 
 .country-text-details {
