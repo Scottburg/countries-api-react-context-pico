@@ -73,7 +73,7 @@ function App() {
           ></input>
         </div>
 
-        <div>
+        <div className="drop-down-select">
           <select
             value={inputValue.region}
             onChange={handleRegionChange}
