@@ -27,6 +27,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
+    'title .'
     'text1 text2'
     'borders borders';
 }
@@ -42,6 +43,9 @@
 }
 .country-text-details-2 {
   grid-area: text2;
+}
+.country-title {
+  grid-area: title;
 }
 
 .home-button {
