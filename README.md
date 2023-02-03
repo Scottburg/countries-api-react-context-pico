@@ -16,7 +16,7 @@
 
 ## Overview
 
-A front end for a rest countries API, using React Context API to manage state and React Router to handle routing, created with typescript, react, sass. Responsive design for mobile, tablet and desktop..
+A front end for a rest countries API, using React Context API to manage state and React Router to handle routing, created with typescript, react, sass. Responsive design for mobile, tablet and desktop.
 
 ### Features
 
