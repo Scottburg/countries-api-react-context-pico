@@ -32,11 +32,11 @@ A front end for a rest countries API, using React Context API to manage state an
 
 ### Screenshots
 
-<img src="./assets/desk1.png" alt="drawing" width="600"/>
-<img src="./assets/desk2.png" alt="drawing" width="600"/>
+<img src=".././assets/desk1.png" alt="drawing" width="600"/>
+<img src=".././assets/desk2.png" alt="drawing" width="600"/>
 
-<img src="./assets/mob1.png" alt="drawing" width="600"/>
-<img src="./assets/mob2.png" alt="drawing" width="600"/>
+<img src=".././assets/mob1.png" alt="drawing" width="600"/>
+<img src=".././assets/mob2.png" alt="drawing" width="600"/>
 
 ### Links
 
