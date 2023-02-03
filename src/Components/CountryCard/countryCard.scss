@@ -46,6 +46,10 @@
     color: $color-dark-text;
     box-shadow: 5px 5px 5px hsl(0, 0%, 5%);
   }
+
+  .country-card:hover {
+    box-shadow: 7px 7px 7px hsl(0, 0%, 1%);
+  }
 }
 
 $breakpoint-tablet: 768px;
