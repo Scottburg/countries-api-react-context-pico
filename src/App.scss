@@ -96,16 +96,20 @@
 $breakpoint-tablet: 768px;
 @media (max-width: $breakpoint-tablet) {
   .cards-container {
-    padding: 0.1rem 2rem;
-    grid-gap: 0;
+    padding: 0.1rem 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
   }
   .search-input-bar {
     flex-flow: column nowrap;
+    padding: 0.1rem 1rem;
+    align-items: flex-start;
     select {
-      padding: 0.1rem 2rem;
+      padding: 0.1rem 1rem;
     }
     .text-search-field {
-      padding: 0.1rem 2rem;
+      padding: 0.1rem 1rem;
       margin-left: 20px;
       margin-right: 20px;
       margin-bottom: 30px;
