@@ -47,3 +47,11 @@
     box-shadow: 5px 5px 5px hsl(0, 0%, 5%);
   }
 }
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  .country-card-details {
+    margin-left: 0;
+    font-size: smaller;
+  }
+}
