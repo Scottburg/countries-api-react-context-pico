@@ -84,7 +84,7 @@ function CountryDetails(country: any) {
             </p>
           </section>
           <section className="border-section">
-            Border Countries:
+            <strong>Border Countries:</strong>
             {countryData.borders ? (
               countryData.borders.map((border: string) => (
                 <Link to={`/country/${border}`}>
