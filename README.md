@@ -26,6 +26,7 @@ A front end for a rest countries API, using React Context API to manage state an
 
 - Responsible design adapted for mobile, tablet and desktop.
 - Efficent use of the API to reduce the number of requests, one single request on load held in rect context and passed to components as needed. No lag on country pages and search.
+- subtle on hover effects on cards.
 
 ### Screenshots
 
@@ -62,7 +63,7 @@ A front end for a rest countries API, using React Context API to manage state an
 
 ### Continued development
 
-Adding animations on hover events.
+~~Adding animations on hover events.~~
 
 ## Author
 
