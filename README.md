@@ -3,16 +3,13 @@
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -32,11 +29,11 @@ A front end for a rest countries API, using React Context API to manage state an
 
 ### Screenshots
 
-<img src=".././assets/desk1.png" alt="drawing" width="600"/>
-<img src=".././assets/desk2.png" alt="drawing" width="600"/>
+<img src="./src/assets/desk1.png" alt="drawing" width="600"/>
+<img src="./src/assets/desk2.png" alt="drawing" width="600"/>
 
-<img src=".././assets/mob1.png" alt="drawing" width="600"/>
-<img src=".././assets/mob2.png" alt="drawing" width="600"/>
+<img src="./src/assets/mob1.png" alt="drawing" width="400"/>
+<img src="./src/assets/mob2.png" alt="drawing" width="400"/>
 
 ### Links
 
