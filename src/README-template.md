@@ -30,17 +30,13 @@ A front end for a rest countries API, using React Context API to manage state an
 - Responsible design adapted for mobile, tablet and desktop.
 - Efficent use of the API to reduce the number of requests, one single request on load held in rect context and passed to components as needed. No lag on country pages and search.
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
+<img src="./assets/desk1.png" alt="drawing" width="600"/>
+<img src="./assets/desk2.png" alt="drawing" width="600"/>
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+<img src="./assets/mob1.png" alt="drawing" width="600"/>
+<img src="./assets/mob2.png" alt="drawing" width="600"/>
 
 ### Links
 
